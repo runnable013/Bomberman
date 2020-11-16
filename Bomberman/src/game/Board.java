@@ -74,7 +74,7 @@ public class Board extends JPanel {
 	private String pointStr = String.valueOf(point);
 	private String keyCountStr = "key : " + keyCount;
 	private String timeStr = "TIME : 04:00";
-	private String levelStr = "LEVEL : ";
+	private String levelStr;
 	
 	public String[] difficulty = {"*", "**", "*", "***", "***"};
 	
@@ -288,7 +288,7 @@ public class Board extends JPanel {
 		
 		level = rand;
 		
-		levelStr += difficulty[level];		
+		levelStr = "LEVEL : " + difficulty[level];		
 		
 		for (int i = 0; i < map[rand].length(); i++) {
 			char item = map[rand].charAt(i);

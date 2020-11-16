@@ -31,7 +31,7 @@ public class Board extends JPanel {
     public final int SPACE = 50;
     
     /**
-     * 죽은 몬스터의 그래픽을 없애기 위한 좌표
+     * 없어진 오브젝트들의 그래픽을 없애기 위한 좌표
      */
     public final int EMPTY_SPACE = -60;
     

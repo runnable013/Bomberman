@@ -1,7 +1,7 @@
 
 시연 영상: https://youtu.be/vct8F3UiNPk
 
-[![Video Label](http://img.youtube.com/vi/uLR1RNqJ1Mw/0.jpg)](https://youtu.be/uLR1RNqJ1Mw?t=0s)
+pod "YoutubePlayer-in-WKWebView", "~> 0.3.0"
 
 (프로젝트 주제)
  - 봄버맨 94

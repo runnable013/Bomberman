@@ -1,5 +1,5 @@
 
-[![Bomberman](https://img.youtube.com/vi/vct8F3UiNPk/default.jpg)](https://youtu.be/vct8F3UiNPk) 
+[![Bomberman](https://img.youtube.com/vi/vct8F3UiNPk/hqdefault.jpg)](https://youtu.be/vct8F3UiNPk) 
 
 (프로젝트 주제)
  - 봄버맨 94

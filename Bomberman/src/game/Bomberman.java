@@ -1,7 +1,6 @@
 package game;
 
 import java.awt.EventQueue;
-import java.sql.SQLException;
 
 import javax.swing.JFrame;
 

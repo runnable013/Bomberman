@@ -1,8 +1,10 @@
 package game;
 
 import java.awt.EventQueue;
+import java.sql.SQLException;
 
 import javax.swing.JFrame;
+
 
 /**
  * Main 클래스
@@ -19,18 +21,18 @@ public class Bomberman extends JFrame {
 	 *  프레임 생성 및 크기 설정 등등..
 	 */
 	private void initUI() {
+		setTitle("Bomberman");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
 		
 		Board board = new Board();
-		add(board);
 
-		setTitle("Bomberman");
+		add(board);
 
 		setSize(board.getBoardWidth() + OFFSET, board.getBoardHeight() + 2 * OFFSET);
 		setLocationRelativeTo(null);
-		setResizable(false);
 	}
-
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(() -> {
 			Bomberman game = new Bomberman();

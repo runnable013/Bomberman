@@ -51,18 +51,20 @@ public class Board extends JPanel {
 	
 	Image image;
 	
-	private int w = 0, h = 0, keyCount = 2;
-	private int bombCount = 1, life = 3, point = 0;
+	private int w = 0, h = 0, keyCount = 2, rand = -1, level, bombCount = 1, life = 3, point = 0;
 	private String lifeStr = String.valueOf(life);
 	private String pointStr = String.valueOf(point);
 	private String keyCountStr = "key : " + keyCount;
 	private String timeStr = "TIME : 04:00";
+	private String levelStr = "LEVEL : ";
+	
+	public String[] difficulty = {"*", "**", "*", "***", "***"};
 	
 	/**
 	 * ¸Ê
 	 */
-	public String level
-			= "                 \n"
+	public String[] map
+			= {"                 \n"
 			+ " ############### \n"	
 			+ " # P *  M * * *# \n"
 			+ " # #*#*#*# # #*# \n"
@@ -76,7 +78,68 @@ public class Board extends JPanel {
 			+ " # # # # # #*# # \n"
 			+ " #* *   M *****# \n"
 			+ " ############### \n"
-			+ "                 @";
+			+ "                 @",
+			  "                 \n"
+			+ " ############### \n"	
+			+ " # P *    * * *# \n"
+			+ " # #*#*#*#####*# \n"
+			+ " #  **** **  #K# \n"
+			+ " # # # ###*#*#*# \n"
+			+ " # *** #E# * M*# \n"
+			+ " #*#M#*#X#*# # # \n"
+			+ " # # *      M *# \n"
+			+ " #*###*# # # #*# \n"
+			+ " #*   ***** *# # \n"
+			+ " # # # # ##### # \n"
+			+ " #* *   M **K**# \n"
+			+ " ############### \n"
+			+ "                 @",
+			  "                 \n"
+			+ " ############### \n"	
+			+ " #   *    *  XE# \n"
+			+ " # #*#*#*####### \n"
+			+ " #M **** **    # \n"
+			+ " #K# # # #*#*#*# \n"
+			+ " # ***  K  *  *# \n"
+			+ " #*# #*# #*# # # \n"
+			+ " # # *      M *# \n"
+			+ " #####*# # # #*# \n"
+			+ " #*   ***** *# # \n"
+			+ " # ##### ##### # \n"
+			+ " # P*     ** **# \n"
+			+ " ############### \n"
+			+ "                 @",
+			  "                 \n"
+			+ " ############### \n"	
+			+ " #   *    *  XE# \n"
+			+ " # #*#*#*####### \n"
+			+ " # #**** **    # \n"
+			+ " # # # #######*# \n"
+			+ " # #**  # M*K#*# \n"
+			+ " #*# ####### # # \n"
+			+ " # #K*M #   M *# \n"
+			+ " # ###*# # # #*# \n"
+			+ " #* M ***** *# # \n"
+			+ " #####*# ##### # \n"
+			+ " # P      ** **# \n"
+			+ " ############### \n"
+			+ "                 @",
+			  "                 \n"
+			+ " ############### \n"	
+			+ " #   *  P *    # \n"
+			+ " # #*#*#*# # # # \n"
+			+ " #  **** **    # \n"
+			+ " # # ########### \n"
+			+ " #  **    M* #K# \n"
+			+ " ##########  # # \n"
+			+ " # K *M     M *# \n"
+			+ " # #  *######### \n"
+			+ " #* M ***** *  # \n"
+			+ " ########### # # \n"
+			+ " #EX      ** **# \n"
+			+ " ############### \n"
+			+ "                 @"
+			};
 
 	public Board() {
 		ImageIcon icon = new ImageIcon("image/Background.png");
@@ -201,8 +264,16 @@ public class Board extends JPanel {
 		Obstacle obstacle;
 		Space space;
 		
-		for (int i = 0; i < level.length(); i++) {
-			char item = level.charAt(i);
+		if (rand == -1) {
+			rand = (int)(Math.random()*4);
+		}
+		
+		level = rand;
+		
+		levelStr += difficulty[level];		
+		
+		for (int i = 0; i < map[rand].length(); i++) {
+			char item = map[rand].charAt(i);
 			switch (item) {
 			case '\n':
 				y += SPACE;
@@ -304,10 +375,10 @@ public class Board extends JPanel {
 		Image image = icon.getImage();
 		g.drawImage(image, 0, 0, this);
 		
+		g.drawString(levelStr, 200, 25);
 		g.drawString(lifeStr, 777, 40);
 		g.drawString(pointStr, 600, 40);
-		g.drawString(keyCountStr, 240, 40);
-		
+		g.drawString(keyCountStr, 200, 50);
 		g.drawString(timeStr, 10, 40);
 	}
 	

@@ -13,6 +13,9 @@ public class Key extends Actor{
 
 	private boolean breaked;
 	
+	/**
+	 * 부셨을 때 점수를 처리하기 위한 변수
+	 */
 	private final int point = 800;
 	
 	private final boolean crushed = true;

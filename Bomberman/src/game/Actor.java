@@ -13,8 +13,14 @@ public class Actor {
 	private int x;
 	private int y;
 	
+	/**
+	 * 충돌을 처리하기 위한 변수
+	 */
 	private boolean crushed = true;
 	
+	/**
+	 * 그래픽을 처리하기 위한 변수
+	 */
 	private Image image;
 	
 	public Actor(int x, int y) {

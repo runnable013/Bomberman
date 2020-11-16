@@ -10,6 +10,9 @@ import javax.swing.JFrame;
  */
 public class Bomberman extends JFrame {
 	private static final long serialVersionUID = 1L;
+	/**
+	 * 창 크기를 맞추기 위한 변수
+	 */
 	private final int OFFSET = 20;
 
 	public Bomberman() {

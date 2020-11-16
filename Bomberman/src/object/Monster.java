@@ -13,6 +13,9 @@ public class Monster extends Actor implements Runnable {
 
 	private boolean stop;
 
+	/**
+	 * 죽였을 때 점수를 처리하기 위한 변수
+	 */
 	private final int point = 200;
 
 	Board board;

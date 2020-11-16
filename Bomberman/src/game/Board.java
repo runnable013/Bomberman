@@ -24,18 +24,33 @@ import object.Wall;
 public class Board extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
+	/**
+     * 그래픽을 처리하기 위한 변수
+     */
 	private final int OFFSET = 0;
     public final int SPACE = 50;
     
+    /**
+     * 죽은 몬스터의 그래픽을 없애기 위한 좌표
+     */
     public final int EMPTY_SPACE = -60;
     
+    /**
+     * 충돌 처리를 위한 변수
+     */
     public final int LEFT_COLLISION = 1;
     public final int RIGHT_COLLISION = 2;
     public final int TOP_COLLISION = 3;
     public final int BOTTOM_COLLISION = 4;
     
+    /**
+     * 
+     */
     public final int KEY_COUNT_ORI = 2;
 
+    /**
+     * 오브젝트를 저장하기 위한 변수
+     */
 	public ArrayList<Wall> walls;
 	public ArrayList<Monster> monsters;
 	public ArrayList<Key> keys;
@@ -43,6 +58,9 @@ public class Board extends JPanel {
 	public ArrayList<Space> spaces;
 	public ArrayList<Actor> world;
 	
+	/**
+     * 오브젝트를 저장하기 위한 변수
+     */
 	private Bomb bomb;
 	public Door door;
 	public Exit exit;

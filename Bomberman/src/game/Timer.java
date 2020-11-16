@@ -8,6 +8,9 @@ import object.Player;
  */
 public class Timer extends Thread {
 
+	/**
+	 * 시간제한을 처리하기 위한 변수
+	 */
 	private final int TIME_ORI = 240;
 	private int time = TIME_ORI;
 

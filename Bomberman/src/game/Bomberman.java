@@ -6,12 +6,12 @@ import javax.swing.JFrame;
 
 
 /**
- * Main 클래스
+ * Main class
  */
 public class Bomberman extends JFrame {
 	private static final long serialVersionUID = 1L;
 	/**
-	 * 창 크기를 맞추기 위한 변수
+	 * Variable to fit the window size
 	 */
 	private final int OFFSET = 20;
 
@@ -20,7 +20,7 @@ public class Bomberman extends JFrame {
 	}
 
 	/**
-	 *  프레임 생성 및 크기 설정 등등..
+	 *  Frame creation and size setting, etc..
 	 */
 	private void initUI() {
 		setTitle("Bomberman");

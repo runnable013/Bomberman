@@ -3,8 +3,8 @@ package game;
 import java.awt.Image;
 
 /**
- * 모든 오브젝트가 상속함
- * 좌표, 충돌, 이미지를 담당
+ * All objects inherit
+ * Responsible for coordinates, collisions, and images
  */
 public class Actor {
 
@@ -14,12 +14,12 @@ public class Actor {
 	private int y;
 	
 	/**
-	 * 충돌을 처리하기 위한 변수
+	 * Variable to handle collision
 	 */
 	private boolean crushed = true;
 	
 	/**
-	 * 그래픽을 처리하기 위한 변수
+	 * Variables for processing graphics
 	 */
 	private Image image;
 	

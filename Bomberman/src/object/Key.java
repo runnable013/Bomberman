@@ -7,14 +7,14 @@ import javax.swing.ImageIcon;
 import game.Actor;
 
 /**
- * 문을 여는 열쇠 오브젝트 클래스
+ * Key object class to open the door
  */
 public class Key extends Actor{
 
 	private boolean breaked;
 	
 	/**
-	 * 부셨을 때 점수를 처리하기 위한 변수
+	 * Variables for handling scores on break
 	 */
 	private final int point = 800;
 	

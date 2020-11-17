@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 import game.Actor;
 
 /**
- * 키를 다 부수면 사라지는 문 클래스
+ * Door class that disappears when all keys are destroyed
  */
 public class Door extends Actor {
 

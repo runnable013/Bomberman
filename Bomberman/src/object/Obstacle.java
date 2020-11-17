@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 import game.Actor;
 
 /**
- * 장애물 오브젝트 클래스
+ * Obstacle Object Class
  */
 public class Obstacle extends Actor {
 

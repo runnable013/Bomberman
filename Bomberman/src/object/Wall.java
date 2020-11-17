@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 import game.Actor;
 
 /**
- * 부술 수 없는 벽 오브젝트 클래스
+ * Unbreakable Wall Object Class
  */
 
 public class Wall extends Actor {

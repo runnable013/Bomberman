@@ -25,18 +25,18 @@ public class Board extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	/**
-     * 그래픽을 처리하기 위한 변수
+     *  Variables for processing graphics
      */
 	private final int OFFSET = 0;
     public final int SPACE = 50;
     
     /**
-     * 없어진 오브젝트들의 그래픽을 없애기 위한 좌표
+     * Coordinates for removing graphics of destroyed objects
      */
     public final int EMPTY_SPACE = -60;
     
     /**
-     * 충돌 처리를 위한 변수
+     * Variables for collision handling
      */
     public final int LEFT_COLLISION = 1;
     public final int RIGHT_COLLISION = 2;
@@ -49,7 +49,7 @@ public class Board extends JPanel {
     public final int KEY_COUNT_ORI = 2;
 
     /**
-     * 오브젝트를 저장하기 위한 변수
+     * Variable to store object
      */
 	public ArrayList<Wall> walls;
 	public ArrayList<Monster> monsters;
@@ -59,7 +59,7 @@ public class Board extends JPanel {
 	public ArrayList<Actor> world;
 	
 	/**
-     * 오브젝트를 저장하기 위한 변수
+     * Variable to store object
      */
 	private Bomb bomb;
 	public Door door;
@@ -79,10 +79,10 @@ public class Board extends JPanel {
 	public String[] difficulty = {"*", "**", "*", "***", "***"};
 	
 	/**
-	 * 맵
+	 * map
 	 */
 	public String[] map
-			= {"                 \n"
+			={"                 \n"
 			+ " ############### \n"	
 			+ " # P *  M * * *# \n"
 			+ " # #*#*#*# # #*# \n"
@@ -168,7 +168,7 @@ public class Board extends JPanel {
 	}
 	
 	/**
-	 *  보드 초기화
+	 *  Board initialization
 	 */
 	private void initBoard() {
 		addKeyListener(new TAdapter());
@@ -263,7 +263,7 @@ public class Board extends JPanel {
     }
 	
     /**
-     * 오브젝트 초기 설정 및 보드 초기화
+     * Initial object setting and board initialization
      */
 	private void initWorld() {
 		walls = new ArrayList<>();
@@ -354,7 +354,7 @@ public class Board extends JPanel {
 	}
 	
 	/**
-	 *  이미지 그리기
+	 *  Draw an image
 	 */
 	private void buildWorld(Graphics g) {
 		g.drawImage(image, 0, 0, this);
@@ -378,7 +378,7 @@ public class Board extends JPanel {
 	
 	
 	/**
-	 * gui 그리기
+	 * Draw gui
 	 */
 	private void buildGUI(Graphics g) {
 		g.setColor(Color.WHITE);
@@ -397,7 +397,7 @@ public class Board extends JPanel {
 	}
 	
 	/**
-	 * 키 이벤트
+	 * Key event
 	 */
 	private class TAdapter extends KeyAdapter {
 		@Override
@@ -508,10 +508,10 @@ public class Board extends JPanel {
 	}
 	
 	/**
-	 *  벽과 충돌했는지 검사
-	 * @param actor 오브젝튼
-	 * @param type 방향
-	 * @return 충돌 여부
+	 *  Check for collision with the wall
+	 * @param actor object
+	 * @param type direction
+	 * @return isCrashed
 	 */
 	public boolean checkWallCollision(Actor actor, int type) {
 		switch (type) {
@@ -552,10 +552,10 @@ public class Board extends JPanel {
 	}
 	
 	/**
-	 *  장애물과 충돌 했는지 검사
-	 * @param actor 오브젝튼
-	 * @param type 방향
-	 * @return 충돌 여부
+	 *  Check for collision with obstacles
+	 * @param actor object
+	 * @param type direction
+	 * @return isCrashed
 	 */
 	public boolean checkObstacleCollision(Actor actor, int type) {
 		switch (type) {
@@ -596,10 +596,10 @@ public class Board extends JPanel {
 	}
 	
 	/**
-	 *  키와 충돌 했는지 검사
-	 * @param actor 오브젝튼
-	 * @param type 방향
-	 * @return 충돌 여부
+	 *  Check for collision with keys
+	 * @param actor object
+	 * @param type direction
+	 * @return isCrashed
 	 */
 	public boolean checkKeyCollision(Actor actor, int type) {
 		switch (type) {
@@ -640,10 +640,10 @@ public class Board extends JPanel {
 	}
 	
 	/**
-	 *  문과 충돌했는지 검사
-	 * @param actor 오브젝튼
-	 * @param type 방향
-	 * @return 충돌 여부
+	 *  Check for collision with a door
+	 * @param actor object
+	 * @param type direction
+	 * @return isCrashed
 	 */
 	public boolean checkDoorCollision(Actor actor, int type) {
 		switch (type) {
@@ -672,10 +672,10 @@ public class Board extends JPanel {
 	}
 	
 	/**
-	 *  폭탄과 충돌 했는지 검사
-	 * @param actor 오브젝튼
-	 * @param type 방향
-	 * @return 충돌 여부
+	 *  Check for collision with a bomb
+	 * @param actor object
+	 * @param type direction
+	 * @return isCrashed
 	 */
 	public boolean checkBombCollision(Actor actor, int type) {
 		switch (type) {

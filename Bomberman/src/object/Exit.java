@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 import game.Actor;
 
 /**
- * 출구 오브젝트 클래스
+ * Exit object class
  */
 public class Exit extends Actor{
 	

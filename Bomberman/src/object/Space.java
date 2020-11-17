@@ -7,7 +7,7 @@ import javax.swing.ImageIcon;
 import game.Actor;
 
 /**
- * 빈공간 오브젝트 클래스
+ * Empty space object class
  */
 public class Space extends Actor  {
 

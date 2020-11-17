@@ -27,9 +27,9 @@ public class Player extends Actor{
 	}
 	
 	/**
-	 * 게임 오버이면 못움직이게 하고 출구로 이동하면 문자를 띄움
-	 * @param x x좌표
-	 * @param y y좌표
+	 * When the game is over, it is disabled, and when moving to the exit, a character is displayed.
+	 * @param x x location
+	 * @param y y location
 	 */
 	public void move(int x, int y) {
 		if (!isGameOver()) {
@@ -52,7 +52,7 @@ public class Player extends Actor{
 	}
 	
 	/**
-	 * 체력을 줄이고 체력이 다 줄면 게임 오버
+	 * Game over when stamina decreases and stamina is insufficient
 	 */
 	public void reduceLife() {
 		board.setLife(board.getLife()-1);
@@ -68,7 +68,7 @@ public class Player extends Actor{
 	}
 	
 	/**
-	 * 체력을 늘림 (코인을 넣을때)
+	 * Increases HP (when inserting coins)
 	 */
 	public void increaseLife() {
 		if (board.getLife() < 9) {

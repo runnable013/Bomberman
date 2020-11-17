@@ -8,7 +8,7 @@ import game.Actor;
 import game.Board;
 
 /**
- * 플레이어의 폭탄 오브젝트 클래스
+ * The player's bomb object class
  */
 public class Bomb extends Actor implements Runnable {
 	private final int bombCount = 3000, bombMax = 1;
@@ -43,7 +43,7 @@ public class Bomb extends Actor implements Runnable {
 		try {
 			Thread.sleep(bombCount);
 			explode();
-			// 터졌으면 폭탄 숨기기
+			// Hide the bomb if it explodes
 			move(board.EMPTY_SPACE, board.EMPTY_SPACE);
 			board.setBombCount(bombMax);
 			board.repaint();
@@ -53,7 +53,7 @@ public class Bomb extends Actor implements Runnable {
 	}
 
 	/**
-	 *  폭탄 폭발
+	 *  Bomb explosion
 	 */
 	private void explode() {
 		boolean left = true, right = true, up = true, down = true;
@@ -67,7 +67,7 @@ public class Bomb extends Actor implements Runnable {
 			((Player) centerActor).reduceLife();
 		}
 		
-		//상화좌우 오브젝트 탐색
+		//Up, left and right object search
 		for (int i = 0; i < board.world.size(); i++) {
 			Actor actor = board.world.get(i);
 
@@ -85,7 +85,7 @@ public class Bomb extends Actor implements Runnable {
 			}
 		}
 
-		//부숴질 수  있는 오브젝트는 숨기기
+		//Hide fragile objects
 		if (leftActor != null && leftActor.isCrushed()) {
 			leftActor.setX(board.EMPTY_SPACE);
 			leftActor.setY(board.EMPTY_SPACE);
@@ -110,7 +110,7 @@ public class Bomb extends Actor implements Runnable {
 			down = false;
 		}
 
-		// 몬스터이면 숨기고 멈춘 다음 점수 카운트
+		// If it's a monster, hide it, stop, and score count
 		if (leftActor instanceof Monster) {
 			((Monster) leftActor).setStop(true);
 			board.setPoint(board.getPoint() + ((Monster) leftActor).getPoint());
@@ -132,7 +132,7 @@ public class Bomb extends Actor implements Runnable {
 			board.setPointStr(String.valueOf(board.getPoint()));
 		}
 
-		// 키이면 카운트 다운 및 점수 카운트
+		// Key to count down and score count
 		if (leftActor instanceof Key) {
 			((Key) leftActor).setBreaked(true);
 			board.reduceKeyCount();
@@ -158,7 +158,7 @@ public class Bomb extends Actor implements Runnable {
 			board.setPointStr(String.valueOf(board.getPoint()));
 		}
 		
-		// 플레이어면 체력 감소
+		// Player side health decrease
 		if (leftActor instanceof Player) {
 			((Player) leftActor).reduceLife();
 		}
@@ -172,7 +172,7 @@ public class Bomb extends Actor implements Runnable {
 			((Player) downActor).reduceLife();
 		}
 
-		// 키를 다 부수면 문 오픈
+		// Open the door when all keys are broken
 		if (board.getKeyCount() == 0) {
 			board.openDoor();
 			board.reduceKeyCount();

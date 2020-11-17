@@ -4,12 +4,12 @@ import object.Player;
 
 
 /**
- * 시간 제한을 담당하는 클래스
+ * Class in charge of time limit
  */
 public class Timer extends Thread {
 
 	/**
-	 * 시간제한을 처리하기 위한 변수
+	 * Variable to handle timeout
 	 */
 	private final int TIME_ORI = 240;
 	private int time = TIME_ORI;
@@ -31,13 +31,13 @@ public class Timer extends Thread {
 	}
 
 	/**
-	 * 시간제한 및 리셋
+	 * Time limit and reset
 	 */
 	@Override
 	public void run() {
 		try {
 			while (true) {
-				//시간 제한 
+				//Time limit
 				while (time >= 0) {
 					sleep(1000);
 					board.setTimeStr(board.getTimeStr().substring(0, 6) + getTime());

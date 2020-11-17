@@ -14,7 +14,7 @@ public class Monster extends Actor implements Runnable {
 	private boolean stop;
 
 	/**
-	 * 죽였을 때 점수를 처리하기 위한 변수
+	 * Variable to handle score when killed
 	 */
 	private final int point = 200;
 
@@ -55,7 +55,7 @@ public class Monster extends Actor implements Runnable {
 	}
 
 	/**
-	 * 몬스터 움직임
+	 * Monster moves
 	 */
 	@Override
 	public void run() {

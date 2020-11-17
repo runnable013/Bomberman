@@ -24,7 +24,7 @@
  - 짜잘한 버그들 픽스
  - 애니메이션 추가
 
-## javaDoc API
+## JavaDoc API
 
 
 ## 시연 동영상

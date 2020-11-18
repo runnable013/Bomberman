@@ -25,7 +25,7 @@
  - 애니메이션 추가
 
 ## JavaDoc API
-[[API로](https://runnable013.github.io/Bomberman/doc/index.html)]
+[[API로](https://runnable013.github.io/Bomberman/Bomberman/doc/index.html)]
 
 ## 시연 동영상
 [![Bomberman](https://img.youtube.com/vi/vct8F3UiNPk/hqdefault.jpg)](https://youtu.be/vct8F3UiNPk) 
